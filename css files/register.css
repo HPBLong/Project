@@ -1,0 +1,51 @@
+body {
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+}
+.contain {
+  background-color: rgb(235, 172, 0);
+  width: 15%;
+  height: 100vh;
+  padding: 10px;
+}
+#user {
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#pass {
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+p {
+  margin: 10px;
+  color: white;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  background-color: white;
+  color: black;
+  padding: 3px;
+  border-radius: 3px;
+}
+.register {
+  border: none;
+  background-color: white;
+  border-radius: 3px;
+}
+.register:hover {
+  background-color: rgba(255, 236, 201, 0.799);
+}
+h1 {
+  color: white;
+}
+.resize {
+  width: 100%;
+}

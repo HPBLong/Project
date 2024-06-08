@@ -1,0 +1,7 @@
+.container {
+  background-color: rgb(235, 172, 0);
+}
+body {
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+}
