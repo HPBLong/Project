@@ -6,14 +6,16 @@
 
 .contain {
   background-color: rgb(235, 172, 0);
+  margin-top: -0.55%;
 }
-.dropdown-menu {
+/* .dropdown-menu {
   background-color: rgb(235, 172, 0);
-}
+} */
 .navbar-brand {
   color: white;
 }
 .navbar-brand:hover {
+  color: white;
 }
 .nav-link {
   color: white;
@@ -23,4 +25,12 @@
 }
 .dropdown-item {
   color: white;
+}
+.nav-link:hover {
+  border: solid 1px white;
+  color: white;
+}
+.login-btn {
+  display: inline-block;
+  text-align: left;
 }
