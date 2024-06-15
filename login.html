@@ -27,17 +27,22 @@
     <link rel="stylesheet" href="./css files/login.css" />
   </head>
   <body>
-    <div class="container">
-      <h1 class="title">Login page</h1>
-      <form action="" id="Form">
-        <input type="text" id="user" placeholder="Username" />
-        <input type="password" id="pass" placeholder="Password" />
-        <button type="submit">submit</button>
+    <div class="contain">
+      <h1 class="resize"><i class="fa-solid fa-palette"></i> Login</h1>
+      <form action="" id="LoginForm">
+        <input type="text" id="user" class="resize" placeholder="Username" />
+        <input
+          type="password"
+          id="pass"
+          class="resize"
+          placeholder="Password"
+        />
+        <button type="submit" class="login resize">Login</button>
       </form>
-      <p>Don't have an account? <a href="./register.html">Register</a></p>
+      <p class="redirect">
+        Don't have an account? <a href="./register.html">Register</a>
+      </p>
     </div>
-    <div class="bg-img"></div>
-    <!-- <a href="./home.html">Home</a> -->
-    <script src="./js files/login.js"></script>
+    <script src="./js files/login.js" type="module"></script>
   </body>
 </html>
