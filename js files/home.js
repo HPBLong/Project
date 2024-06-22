@@ -1,31 +1,55 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+import { firebaseConfig } from "./firebase.js";
 import {
-  app,
-  auth,
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-} from "./firebase.js";
+  getFirestore,
+  collection,
+  onSnapshot,
+  query,
+} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
-const user = auth.currentUser;
-const logoutbutton = document.getElementById("LogoutBtn");
-
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    const uid = user.uid;
-    console.log(user.email);
-  } else {
-    console.log("No user");
-  }
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const postQuery = query(collection(db, "Info"));
+const postQuery2 = query(collection(db, "Info2"));
+const output = document.getElementById("brushproduct");
+const output2 = document.getElementById("paintproduct");
+onSnapshot(postQuery, (snapshot) => {
+  output.innerHTML = "";
+  snapshot.forEach((doc) => {
+    output.innerHTML += `
+       <div class="card col-3 mx-auto">
+           <img
+             src="./images/painting-brush-4inch_hubae71684f74698452562c146daae5a96_56954_750x750_resize_q85_box.jpg"
+             class="card-img-top"
+             alt="..."
+           />
+           <div class="card-body">
+             <h5 class="card-title">${doc.data().title}</h5>
+             <p class="card-text">
+             ${doc.data().description}
+             </p>
+             <a href="#" class="btn btn-primary">Go somewhere</a>
+           </div>
+         </div>`;
+  });
 });
-
-logoutbutton.addEventListener("click", () => {
-  signOut(auth)
-    .then(() => {
-      window.location.href = "./login.html";
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+onSnapshot(postQuery2, (snapshot) => {
+  output2.innerHTML = "";
+  snapshot.forEach((doc) => {
+    output2.innerHTML += `
+       <div class="card col-3 mx-auto">
+           <img
+             src="./images/painting-brush-4inch_hubae71684f74698452562c146daae5a96_56954_750x750_resize_q85_box.jpg"
+             class="card-img-top"
+             alt="..."
+           />
+           <div class="card-body">
+             <h5 class="card-title">${doc.data().title}</h5>
+             <p class="card-text">
+             ${doc.data().description}
+             </p>
+             <a href="#" class="btn btn-primary">Go somewhere</a>
+           </div>
+         </div>`;
+  });
 });

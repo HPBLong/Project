@@ -94,3 +94,14 @@
   margin: 10px;
   text-decoration: none;
 }
+.item-card {
+  margin: 1%;
+}
+.card {
+  width: 20%;
+}
+.Title {
+  text-align: center;
+  color: rgb(235, 172, 0);
+  margin-top: 1%;
+}
