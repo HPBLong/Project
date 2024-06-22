@@ -7,6 +7,7 @@ body {
   width: 15%;
   height: 100vh;
   padding: 10px;
+  display: inline-block;
 }
 #user {
   padding: 5px;
@@ -50,6 +51,16 @@ h1 {
 }
 .resize {
   width: 100%;
+}
+.anothercontainer {
+  display: inline-block;
+  background-color: rgb(235, 172, 0);
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 35%;
+}
+.text {
+  font-size: 100px;
 }
 @media only screen and (max-width: 600px) {
 }
