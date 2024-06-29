@@ -17,7 +17,7 @@ onSnapshot(postQuery, (snapshot) => {
   output.innerHTML = "";
   snapshot.forEach((doc) => {
     output.innerHTML += `
-       <div class="card col-3 mx-auto">
+       <div class="card col-3 mx-auto" style="width: 15%">
            <img
              src="./images/painting-brush-4inch_hubae71684f74698452562c146daae5a96_56954_750x750_resize_q85_box.jpg"
              class="card-img-top"
@@ -28,7 +28,10 @@ onSnapshot(postQuery, (snapshot) => {
              <p class="card-text">
              ${doc.data().description}
              </p>
-             <a href="#" class="btn btn-primary">Go somewhere</a>
+             <p class="card-text">
+             ${doc.data().price}
+             </p>
+             <a href="./details.html" class="btn btn-primary">Details Page</a>
            </div>
          </div>`;
   });
@@ -37,9 +40,9 @@ onSnapshot(postQuery2, (snapshot) => {
   output2.innerHTML = "";
   snapshot.forEach((doc) => {
     output2.innerHTML += `
-       <div class="card col-3 mx-auto">
+       <div class="card col-4 mx-auto " style="width: 15%">
            <img
-             src="./images/painting-brush-4inch_hubae71684f74698452562c146daae5a96_56954_750x750_resize_q85_box.jpg"
+             src="./images/paint buckets.avif"
              class="card-img-top"
              alt="..."
            />
@@ -48,7 +51,10 @@ onSnapshot(postQuery2, (snapshot) => {
              <p class="card-text">
              ${doc.data().description}
              </p>
-             <a href="#" class="btn btn-primary">Go somewhere</a>
+             <p class="card-text">
+             ${doc.data().price}
+             </p>
+             <a href="./details.html" class="btn btn-primary">Details Page</a>
            </div>
          </div>`;
   });

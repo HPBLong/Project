@@ -1,15 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 .contain {
   background-color: rgb(235, 172, 0);
   margin-top: -0.55%;
 }
-/* .dropdown-menu {
-  background-color: rgb(235, 172, 0);
-} */
 .navbar-brand {
   color: white;
 }
@@ -21,37 +13,23 @@
   font-size: 14px;
   margin-left: 10px;
 }
-.btn {
-  color: white;
-}
-.dropdown-item {
-  color: white;
-}
 .nav-link:hover {
   border: solid 1px white;
   border-radius: 3px;
   color: white;
 }
-.login-btn {
-  display: inline-block;
-  text-align: left;
+body {
+  font-family: "Playwrite NG Modern", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
-.carousel {
-  margin-top: -0.55%;
-}
-.cont {
-  display: inline-block;
-  background-color: aqua;
+.btn {
+  color: white;
 }
 .btn:hover {
   border: solid 1px white;
   color: white;
-}
-.about {
-  background-color: white;
-  margin: 300px 50px 300px 200px;
-  padding: 50px 30px;
-  border-radius: 5px;
 }
 .footer-icon:hover {
   background-color: rgb(255, 255, 255);
@@ -104,26 +82,13 @@
 .info-item:hover {
   text-decoration: underline;
 }
-.item-card {
-  margin: 1%;
-}
-.card {
-  width: 20%;
-}
-.Title {
-  text-align: center;
-  color: rgb(235, 172, 0);
-  margin-top: 1%;
-}
-.titlecontainer {
-  border: solid rgb(235, 172, 0) 2px;
+.profilecontainer {
+  background-color: rgb(235, 172, 0);
   border-radius: 5px;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin: 0 10% 0 10%;
+  padding: 10px;
 }
-body {
-  font-family: "Playwrite NG Modern", cursive;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+p {
+  color: white;
+  font-size: 25px;
 }

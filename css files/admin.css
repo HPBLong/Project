@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: "Playwrite NG Modern", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 .topbar {
   background-color: rgb(235, 172, 0);
   color: white;
@@ -16,4 +22,14 @@
   border: solid 1px white;
   border-radius: 3px;
   padding: 3px;
+}
+.viewhome:hover {
+  background-color: white;
+  color: rgb(235, 172, 0);
+}
+.topbar {
+  font-family: "Playwrite NG Modern", cursive !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }

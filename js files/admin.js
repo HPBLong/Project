@@ -22,11 +22,12 @@ bform.addEventListener("submit", async (e) => {
   e.preventDefault();
   let title = document.getElementById("title").value;
   let description = document.getElementById("description").value;
-
+  let price = document.getElementById("brushpricetag").value;
   try {
     const docRef = await addDoc(collection(db, "Info"), {
       title: title,
       description: description,
+      price: price,
     });
     getbrushData();
     console.log("submit success");
@@ -51,17 +52,20 @@ async function getbrushData() {
              <p class="card-text">
              ${doc.data().description}
              </p>
-             <button onclick="deleteData('${doc.id}')">Delete</button>
+             <p class="card-text">
+             ${doc.data().price}
+             </p>
+             <button onclick="deleteData1('${doc.id}')">Delete</button>
            </div>
          </div>`;
   });
 }
 
-window.deleteData = async function (id) {
+window.deleteData1 = async function (id) {
   try {
     await deleteDoc(doc(db, "Info", id));
     console.log("Delete success");
-    getbrushData();
+    location.reload();
   } catch (error) {
     console.error(error);
   }
@@ -70,13 +74,14 @@ window.deleteData = async function (id) {
 getbrushData();
 pform.addEventListener("submit", async (e) => {
   e.preventDefault();
-  let title = document.getElementById("title").value;
-  let description = document.getElementById("description").value;
-
+  let title = document.getElementById("painttitle").value;
+  let description = document.getElementById("paintdesc").value;
+  let price = document.getElementById("paintpricetag").value;
   try {
     const docRef = await addDoc(collection(db, "Info2"), {
       title: title,
       description: description,
+      price: price,
     });
     getpaintData();
     console.log("submit success");
@@ -92,7 +97,7 @@ async function getpaintData() {
     paintoutput.innerHTML += `  
     <div class="card col-3 mx-auto " style="width: 10%">
            <img
-             src="./images/painting-brush-4inch_hubae71684f74698452562c146daae5a96_56954_750x750_resize_q85_box.jpg"
+             src="./images/paint buckets.avif"
              class="card-img-top"
              alt="..."
            />
@@ -101,9 +106,22 @@ async function getpaintData() {
              <p class="card-text">
              ${doc.data().description}
              </p>
-             <button onclick="deleteData('${doc.id}')">Delete</button>
+             <p class="card-text">
+             ${doc.data().price}
+             </p>
+             <button onclick="deleteData2('${doc.id}')">Delete</button>
            </div>
          </div>`;
   });
 }
 getpaintData();
+
+window.deleteData2 = async function (id) {
+  try {
+    await deleteDoc(doc(db, "Info2", id));
+    console.log("Delete success");
+    location.reload();
+  } catch (error) {
+    console.error(error);
+  }
+};
