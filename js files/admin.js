@@ -1,4 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+import { firebaseConfig } from "./firebase.js";
 
 import {
   onSnapshot,
@@ -8,8 +9,9 @@ import {
   getDocs,
   deleteDoc,
   doc,
+  updateDoc,
+  query,
 } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
-import { firebaseConfig } from "./firebase.js";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -29,49 +31,13 @@ bform.addEventListener("submit", async (e) => {
       description: description,
       price: price,
     });
-    getbrushData();
+    // getbrushData();
     console.log("submit success");
   } catch (e) {
     console.error("Error adding document: ", e);
   }
 });
 
-async function getbrushData() {
-  brushoutput.innerHTML = "";
-  const querySnapshot = await getDocs(collection(db, "Info"));
-  querySnapshot.forEach((doc) => {
-    brushoutput.innerHTML += `
-    <div class="card col-3 mx-auto" style="width: 10%">
-           <img
-             src="./images/painting-brush-4inch_hubae71684f74698452562c146daae5a96_56954_750x750_resize_q85_box.jpg"
-             class="card-img-top"
-             alt="..."
-           />
-           <div class="card-body">
-             <h5 class="card-title">${doc.data().title}</h5>
-             <p class="card-text">
-             ${doc.data().description}
-             </p>
-             <p class="card-text">
-             ${doc.data().price}
-             </p>
-             <button onclick="deleteData1('${doc.id}')">Delete</button>
-           </div>
-         </div>`;
-  });
-}
-
-window.deleteData1 = async function (id) {
-  try {
-    await deleteDoc(doc(db, "Info", id));
-    console.log("Delete success");
-    location.reload();
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-getbrushData();
 pform.addEventListener("submit", async (e) => {
   e.preventDefault();
   let title = document.getElementById("painttitle").value;
@@ -90,12 +56,45 @@ pform.addEventListener("submit", async (e) => {
   }
 });
 
-async function getpaintData() {
+const postQuery = query(collection(db, "Info"));
+const postQuery2 = query(collection(db, "Info2"));
+
+onSnapshot(postQuery, (snapshot) => {
+  brushoutput.innerHTML = "";
+  snapshot.forEach((doc) => {
+    const post = doc.data();
+    const postId = doc.id;
+
+    brushoutput.innerHTML += `
+          <div class="card col-3 mx-1" style="width: 10%">
+           <img
+             src="./images/painting-brush-4inch_hubae71684f74698452562c146daae5a96_56954_750x750_resize_q85_box.jpg"
+             class="card-img-top"
+             alt="..."
+           />
+           <div class="card-body">
+             <h5 class="card-title">${doc.data().title}</h5>
+             <p class="card-text">
+             ${doc.data().description}
+             </p>
+             <p class="card-text">
+             ${doc.data().price}
+             </p>
+             <button onclick="deleteData1('${doc.id}')" id="btn">Delete</button>
+             <button onclick="editData('${doc.id}')" id="btn">Edit</button>
+           </div>
+         </div>`;
+  });
+});
+
+onSnapshot(postQuery2, (snapshot) => {
   paintoutput.innerHTML = "";
-  const querySnapshot = await getDocs(collection(db, "Info2"));
-  querySnapshot.forEach((doc) => {
-    paintoutput.innerHTML += `  
-    <div class="card col-3 mx-auto " style="width: 10%">
+  snapshot.forEach((doc) => {
+    const post = doc.data();
+    const postId = doc.id;
+
+    paintoutput.innerHTML += `
+          <div class="card col-3 mx-1" style="width: 10%">
            <img
              src="./images/paint buckets.avif"
              class="card-img-top"
@@ -109,18 +108,117 @@ async function getpaintData() {
              <p class="card-text">
              ${doc.data().price}
              </p>
-             <button onclick="deleteData2('${doc.id}')">Delete</button>
+             <button onclick="deleteData1('${doc.id}')" id="btn">Delete</button>
+             <button onclick="editData('${doc.id}')" id="btn">Edit</button>
            </div>
          </div>`;
   });
-}
-getpaintData();
+});
+
+// async function getbrushData() {
+//   brushoutput.innerHTML = "";
+//   const querySnapshot = await getDocs(collection(db, "Info"));
+//   querySnapshot.forEach((doc) => {
+//     brushoutput.innerHTML += `
+//     <div class="card col-3 mx-auto" style="width: 10%">
+//            <img
+//              src="./images/painting-brush-4inch_hubae71684f74698452562c146daae5a96_56954_750x750_resize_q85_box.jpg"
+//              class="card-img-top"
+//              alt="..."
+//            />
+//            <div class="card-body">
+//              <h5 class="card-title">${doc.data().title}</h5>
+//              <p class="card-text">
+//              ${doc.data().description}
+//              </p>
+//              <p class="card-text">
+//              ${doc.data().price}
+//              </p>
+//              <button onclick="deleteData1('${doc.id}')">Delete</button>
+//              <button onclick="editData('${doc.id}')">Edit</button>
+//            </div>
+//          </div>`;
+//   });
+// }
+
+// getbrushData();
+
+// async function getpaintData() {
+//   paintoutput.innerHTML = "";
+//   const querySnapshot = await getDocs(collection(db, "Info2"));
+//   querySnapshot.forEach((doc) => {
+//     paintoutput.innerHTML += `
+//     <div class="card col-3 mx-auto " style="width: 10%">
+//            <img
+//              src="./images/paint buckets.avif"
+//              class="card-img-top"
+//              alt="..."
+//            />
+//            <div class="card-body">
+//              <h5 class="card-title">${doc.data().title}</h5>
+//              <p class="card-text">
+//              ${doc.data().description}
+//              </p>
+//              <p class="card-text">
+//              ${doc.data().price}
+//              </p>
+//              <button onclick="deleteData2('${doc.id}')">Delete</button>
+//              <button onclick="editData('${doc.id}')">Edit</button>
+//            </div>
+//          </div>`;
+//   });
+// }
+// getpaintData();
+
+window.deleteData1 = async function (id) {
+  try {
+    await deleteDoc(doc(db, "Info", id));
+    console.log("Delete success");
+    location.reload();
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 window.deleteData2 = async function (id) {
   try {
     await deleteDoc(doc(db, "Info2", id));
     console.log("Delete success");
     location.reload();
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+window.editData = async function (id) {
+  try {
+    const newtitle = prompt("Input new title");
+    const newdesc = prompt("Input new description");
+    const newprice = prompt("Input new price");
+
+    await updateDoc(doc(db, "Info", id), {
+      title: newtitle,
+      description: newdesc,
+      price: newprice,
+    });
+    console.log("Edit success");
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+window.editData = async function (id) {
+  try {
+    const newtitle = prompt("Input new title");
+    const newdesc = prompt("Input new description");
+    const newprice = prompt("Input new price");
+
+    await updateDoc(doc(db, "Info2", id), {
+      title: newtitle,
+      description: newdesc,
+      price: newprice,
+    });
+    console.log("Edit success");
   } catch (error) {
     console.error(error);
   }
