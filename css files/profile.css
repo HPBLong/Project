@@ -92,3 +92,7 @@ p {
   color: white;
   font-size: 25px;
 }
+.recent {
+  border: 3px solid rgb(235, 172, 0);
+  color: rgb(235, 172, 0);
+}

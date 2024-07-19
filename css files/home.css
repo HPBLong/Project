@@ -17,6 +17,7 @@
   color: white;
 }
 .nav-link {
+  border: solid 1px white;
   color: white;
   font-size: 14px;
   margin-left: 10px;
@@ -28,9 +29,10 @@
   color: white;
 }
 .nav-link:hover {
+  background-color: white;
   border: solid 1px white;
   border-radius: 3px;
-  color: white;
+  color: rgb(235, 172, 0);
 }
 .login-btn {
   display: inline-block;

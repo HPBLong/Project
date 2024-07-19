@@ -80,8 +80,14 @@ onSnapshot(postQuery, (snapshot) => {
              <p class="card-text">
              ${doc.data().price}
              </p>
-             <button onclick="deleteData1('${doc.id}')" id="btn">Delete</button>
-             <button onclick="editData('${doc.id}')" id="btn">Edit</button>
+             <div class="btn-group">
+             <button onclick="deleteData1('${
+               doc.id
+             }')" type="button" class="btn btn-primary">Delete</button>
+             <button onclick="editData1('${
+               doc.id
+             }')" type="button" class="btn btn-primary">Edit</button>
+             </div>
            </div>
          </div>`;
   });
@@ -108,8 +114,14 @@ onSnapshot(postQuery2, (snapshot) => {
              <p class="card-text">
              ${doc.data().price}
              </p>
-             <button onclick="deleteData1('${doc.id}')" id="btn">Delete</button>
-             <button onclick="editData('${doc.id}')" id="btn">Edit</button>
+             <div class="btn-group">
+             <button onclick="deleteData1('${
+               doc.id
+             }')" type="button" class="btn btn-primary">Delete</button>
+             <button onclick="editData2('${
+               doc.id
+             }')" type="button" class="btn btn-primary">Edit</button>
+             </div>
            </div>
          </div>`;
   });
@@ -174,7 +186,6 @@ window.deleteData1 = async function (id) {
   try {
     await deleteDoc(doc(db, "Info", id));
     console.log("Delete success");
-    location.reload();
   } catch (error) {
     console.error(error);
   }
@@ -184,13 +195,12 @@ window.deleteData2 = async function (id) {
   try {
     await deleteDoc(doc(db, "Info2", id));
     console.log("Delete success");
-    location.reload();
   } catch (error) {
     console.error(error);
   }
 };
 
-window.editData = async function (id) {
+window.editData1 = async function (id) {
   try {
     const newtitle = prompt("Input new title");
     const newdesc = prompt("Input new description");
@@ -207,7 +217,7 @@ window.editData = async function (id) {
   }
 };
 
-window.editData = async function (id) {
+window.editData2 = async function (id) {
   try {
     const newtitle = prompt("Input new title");
     const newdesc = prompt("Input new description");
