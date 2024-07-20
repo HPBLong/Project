@@ -38,3 +38,12 @@ body {
   color: white;
   border: none;
 }
+#brushproductform {
+  display: inline-block;
+}
+.editing-form {
+  margin: 1% 0 1% 0;
+}
+.hide {
+  display: none;
+}

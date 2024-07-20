@@ -49,7 +49,6 @@ pform.addEventListener("submit", async (e) => {
       description: description,
       price: price,
     });
-    getpaintData();
     console.log("submit success");
   } catch (e) {
     console.error("Error adding document: ", e);
@@ -115,7 +114,7 @@ onSnapshot(postQuery2, (snapshot) => {
              ${doc.data().price}
              </p>
              <div class="btn-group">
-             <button onclick="deleteData1('${
+             <button onclick="deleteData2('${
                doc.id
              }')" type="button" class="btn btn-primary">Delete</button>
              <button onclick="editData2('${
@@ -202,33 +201,81 @@ window.deleteData2 = async function (id) {
 
 window.editData1 = async function (id) {
   try {
-    const newtitle = prompt("Input new title");
-    const newdesc = prompt("Input new description");
-    const newprice = prompt("Input new price");
-
-    await updateDoc(doc(db, "Info", id), {
-      title: newtitle,
-      description: newdesc,
-      price: newprice,
+    brushoutput.innerHTML += `<div class="editing-form"><form action="" id="editbrushform">
+        <input type="text" id="newtitle" placeholder="Input new Product name" />
+        <input
+          class="desc"
+          type="text"
+          id="newdesc"
+          placeholder="Input new Description"
+        />
+        <input
+          class="desc"
+          type="text"
+          id="newprice"
+          placeholder="Input new Price"
+        />
+        <button type="submit">submit</button>
+      </form></div>`;
+    const editbrushform = document.getElementById("editbrushform");
+    editbrushform.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const newtitle = document.getElementById("newtitle").value;
+      const newdesc = document.getElementById("newdesc").value;
+      const newprice = document.getElementById("newprice").value;
+      updateDoc(doc(db, "Info", id), {
+        title: newtitle,
+        description: newdesc,
+        price: newprice,
+      });
+      editbrushform.classList.add("hide");
+      console.log("Edit success");
     });
-    console.log("Edit success");
   } catch (error) {
     console.error(error);
   }
 };
 
-window.editData2 = async function (id) {
-  try {
-    const newtitle = prompt("Input new title");
-    const newdesc = prompt("Input new description");
-    const newprice = prompt("Input new price");
+let click = false;
+const formappareance = document.getElementById("formappearance");
 
-    await updateDoc(doc(db, "Info2", id), {
-      title: newtitle,
-      description: newdesc,
-      price: newprice,
+window.editData2 = async function (id) {
+  click = !click;
+  console.log(click);
+  try {
+    if (click == true) {
+      formappareance.innerHTML += `<div class="editing-form"><form action="" id="editpaintform">
+          <input type="text" id="newtitle" placeholder="Input new Product name" />
+          <input
+            class="desc"
+            type="text"
+            id="newdesc"
+            placeholder="Input new Description"
+          />
+          <input
+            class="desc"
+            type="text"
+            id="newprice"
+            placeholder="Input new Price"
+          />
+          <button type="submit">submit</button>
+        </form></div>`;
+    } else if (click == false) {
+      formappareance.classList.add("hide");
+    }
+    const editpaintform = document.getElementById("editpaintform");
+    editpaintform.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const newtitle = document.getElementById("newtitle").value;
+      const newdesc = document.getElementById("newdesc").value;
+      const newprice = document.getElementById("newprice").value;
+      updateDoc(doc(db, "Info2", id), {
+        title: newtitle,
+        description: newdesc,
+        price: newprice,
+      });
+      console.log("Edit success");
     });
-    console.log("Edit success");
   } catch (error) {
     console.error(error);
   }

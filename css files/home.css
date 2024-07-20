@@ -17,10 +17,10 @@
   color: white;
 }
 .nav-link {
-  border: solid 1px white;
   color: white;
   font-size: 14px;
   margin-left: 10px;
+  border-radius: 25px;
 }
 .btn {
   color: white;
@@ -30,8 +30,6 @@
 }
 .nav-link:hover {
   background-color: white;
-  border: solid 1px white;
-  border-radius: 3px;
   color: rgb(235, 172, 0);
 }
 .login-btn {
@@ -45,9 +43,8 @@
   display: inline-block;
   background-color: aqua;
 }
-.btn:hover {
-  border: solid 1px white;
-  color: white;
+.holder:active {
+  color: rgb(235, 172, 0);
 }
 .about {
   background-color: white;
@@ -136,7 +133,7 @@ body {
   border: solid rgb(235, 172, 0) 2px;
   color: rgb(235, 172, 0);
   padding: 5px;
-  transition: 0.1s;
+  transition: all 0.3s;
   border-radius: 25px;
 }
 .morebtn:hover {
@@ -152,4 +149,11 @@ body {
   background-color: white;
   border: 2px solid rgb(235, 172, 0);
   color: rgb(235, 172, 0);
+}
+.top {
+  padding-bottom: 0;
+}
+.text {
+  color: white;
+  text-decoration: none;
 }
