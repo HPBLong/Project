@@ -86,23 +86,60 @@ body {
   background-color: rgb(235, 172, 0);
   border-radius: 5px;
   margin: 0 10% 0 10%;
-  padding: 10px;
+  padding: 10px 10px 0 10px;
 }
 p {
   color: white;
   font-size: 25px;
 }
 .recent {
-  margin: 1% 10% 0 10%;
+  margin: 1% 25% 0 25%;
+  padding-top: 10px;
   border: 3px solid rgb(235, 172, 0);
   border-radius: 5px;
 }
 .liked {
-  margin: 1% 10% 0 10%;
+  margin: 1% 25% 0 25%;
+  padding-top: 10px;
   border: 3px solid rgb(235, 172, 0);
   border-radius: 5px;
 }
 .title {
   color: rgb(235, 172, 0);
   text-align: center;
+}
+.productcontainer {
+  background-color: rgb(235, 172, 0);
+  margin: 1% 10% 0 10%;
+  padding: 10% 0 10% 0;
+  text-align: center;
+  border-radius: 5px;
+}
+.card-text {
+  color: black;
+  text-align: center;
+}
+.card-title {
+  text-align: center;
+}
+.btn {
+  background-color: rgb(235, 172, 0);
+  border: 2px solid rgb(235, 172, 0);
+  border-radius: 25px;
+}
+.btn:hover {
+  background-color: white;
+  color: rgb(235, 172, 0);
+  border: 2px solid rgb(235, 172, 0);
+}
+.card {
+  margin: 1%;
+}
+#brushproduct {
+  background-color: rgb(235, 172, 0);
+  margin: 1% 10% 1% 10%;
+  border-radius: 5px;
+}
+.profile-item {
+  display: inline-block;
 }
