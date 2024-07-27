@@ -61,17 +61,7 @@ body {
 .navbar-brand:hover {
   color: white;
 }
-.nav-link {
-  color: white;
-  font-size: 14px;
-  margin-left: 10px;
-}
 .btn {
-  color: white;
-}
-.nav-link:hover {
-  border: solid 1px white;
-  border-radius: 3px;
   color: white;
 }
 .login-btn {
@@ -86,19 +76,11 @@ body {
   border: solid 1px white;
   color: white;
 }
-/* .productimg {
-  border: solid rgb(235, 172, 0) 1px;
-  border-radius: 5px;
-  width: 25%;
-  margin: 5% 0 5% 10%;
-} */
-
 .carousel-control-next-icon:after {
   content: ">";
   font-size: 55px;
   color: black;
 }
-
 .carousel-control-prev-icon:after {
   content: "<";
   font-size: 55px;
@@ -108,6 +90,71 @@ body {
   border: solid rgb(235, 172, 0) 1px;
   border-radius: 5px;
 }
-.carousel {
-  /* margin: 10% 60% 10% 20%; */
+.liked {
+  margin: 1% 25% 0 25%;
+  padding-top: 10px;
+  border: 3px solid rgb(235, 172, 0);
+  border-radius: 5px;
+}
+.title {
+  color: rgb(235, 172, 0);
+}
+.Title {
+  text-align: center;
+  color: rgb(235, 172, 0);
+  margin-top: 1%;
+}
+.titlecontainer {
+  border: solid rgb(235, 172, 0) 2px;
+  border-radius: 5px;
+  margin: 0 25% 0 25%;
+  padding-top: 5px;
+}
+.morebtn {
+  margin-bottom: 10px;
+  border-radius: 3px;
+  background-color: white;
+  border: solid rgb(235, 172, 0) 2px;
+  color: rgb(235, 172, 0);
+  padding: 5px;
+  transition: all 0.3s;
+  border-radius: 25px;
+}
+.morebtn:hover {
+  background-color: rgb(235, 172, 0);
+  color: white;
+}
+.btn {
+  background-color: rgb(235, 172, 0);
+  border: 2px solid rgb(235, 172, 0);
+  border-radius: 25px;
+}
+.btn:hover {
+  background-color: white;
+  border: 2px solid rgb(235, 172, 0);
+  color: rgb(235, 172, 0);
+}
+.nav-link {
+  color: white;
+  font-size: 14px;
+  margin-left: 10px;
+  border-radius: 25px;
+}
+.nav-link:hover {
+  background-color: white;
+  color: rgb(235, 172, 0);
+}
+.item-card {
+  margin: 1%;
+}
+.card-body {
+  text-align: center;
+}
+.Productcontainer {
+  width: 50%;
+  margin: 5%;
+  display: inline-block;
+}
+.product-info {
+  display: inline-block;
 }

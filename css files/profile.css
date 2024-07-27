@@ -12,11 +12,11 @@
   color: white;
   font-size: 14px;
   margin-left: 10px;
+  border-radius: 25px;
 }
 .nav-link:hover {
-  border: solid 1px white;
-  border-radius: 3px;
-  color: white;
+  background-color: white;
+  color: rgb(235, 172, 0);
 }
 body {
   font-family: "Playwrite NG Modern", cursive;
