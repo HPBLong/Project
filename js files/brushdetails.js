@@ -43,7 +43,7 @@ onSnapshot(postQuery, (snapshot) => {
 
 async function getpaintDetails(id) {
   try {
-    const docRef = doc(db, "Info2", id);
+    const docRef = doc(db, "Info", id);
     const docSnap = await getDoc(docRef);
     const details = document.getElementById("productinfo");
     if (docSnap.exists()) {

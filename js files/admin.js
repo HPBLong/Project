@@ -126,61 +126,6 @@ onSnapshot(postQuery2, (snapshot) => {
   });
 });
 
-// async function getbrushData() {
-//   brushoutput.innerHTML = "";
-//   const querySnapshot = await getDocs(collection(db, "Info"));
-//   querySnapshot.forEach((doc) => {
-//     brushoutput.innerHTML += `
-//     <div class="card col-3 mx-auto" style="width: 10%">
-//            <img
-//              src="./images/painting-brush-4inch_hubae71684f74698452562c146daae5a96_56954_750x750_resize_q85_box.jpg"
-//              class="card-img-top"
-//              alt="..."
-//            />
-//            <div class="card-body">
-//              <h5 class="card-title">${doc.data().title}</h5>
-//              <p class="card-text">
-//              ${doc.data().description}
-//              </p>
-//              <p class="card-text">
-//              ${doc.data().price}
-//              </p>
-//              <button onclick="deleteData1('${doc.id}')">Delete</button>
-//              <button onclick="editData('${doc.id}')">Edit</button>
-//            </div>
-//          </div>`;
-//   });
-// }
-
-// getbrushData();
-
-// async function getpaintData() {
-//   paintoutput.innerHTML = "";
-//   const querySnapshot = await getDocs(collection(db, "Info2"));
-//   querySnapshot.forEach((doc) => {
-//     paintoutput.innerHTML += `
-//     <div class="card col-3 mx-auto " style="width: 10%">
-//            <img
-//              src="./images/paint buckets.avif"
-//              class="card-img-top"
-//              alt="..."
-//            />
-//            <div class="card-body">
-//              <h5 class="card-title">${doc.data().title}</h5>
-//              <p class="card-text">
-//              ${doc.data().description}
-//              </p>
-//              <p class="card-text">
-//              ${doc.data().price}
-//              </p>
-//              <button onclick="deleteData2('${doc.id}')">Delete</button>
-//              <button onclick="editData('${doc.id}')">Edit</button>
-//            </div>
-//          </div>`;
-//   });
-// }
-// getpaintData();
-
 window.deleteData1 = async function (id) {
   try {
     await deleteDoc(doc(db, "Info", id));
@@ -199,24 +144,13 @@ window.deleteData2 = async function (id) {
   }
 };
 
+let click = false;
+const formappareance = document.getElementById("brushform");
+const formappareance2 = document.getElementById("paintform");
+
 window.editData1 = async function (id) {
   try {
-    brushoutput.innerHTML += `<div class="editing-form"><form action="" id="editbrushform">
-        <input type="text" id="newtitle" placeholder="Input new Product name" />
-        <input
-          class="desc"
-          type="text"
-          id="newdesc"
-          placeholder="Input new Description"
-        />
-        <input
-          class="desc"
-          type="text"
-          id="newprice"
-          placeholder="Input new Price"
-        />
-        <button type="submit">submit</button>
-      </form></div>`;
+    formappareance.classList.toggle("hide");
     const editbrushform = document.getElementById("editbrushform");
     editbrushform.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -228,7 +162,7 @@ window.editData1 = async function (id) {
         description: newdesc,
         price: newprice,
       });
-      editbrushform.classList.add("hide");
+      editbrushform.classList.toggle("hide");
       console.log("Edit success");
     });
   } catch (error) {
@@ -236,33 +170,9 @@ window.editData1 = async function (id) {
   }
 };
 
-let click = false;
-const formappareance = document.getElementById("formappearance");
-
 window.editData2 = async function (id) {
-  click = !click;
-  console.log(click);
   try {
-    if (click == true) {
-      formappareance.innerHTML += `<div class="editing-form"><form action="" id="editpaintform">
-          <input type="text" id="newtitle" placeholder="Input new Product name" />
-          <input
-            class="desc"
-            type="text"
-            id="newdesc"
-            placeholder="Input new Description"
-          />
-          <input
-            class="desc"
-            type="text"
-            id="newprice"
-            placeholder="Input new Price"
-          />
-          <button type="submit">submit</button>
-        </form></div>`;
-    } else if (click == false) {
-      formappareance.classList.add("hide");
-    }
+    formappareance2.classList.toggle("hide");
     const editpaintform = document.getElementById("editpaintform");
     editpaintform.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -274,6 +184,7 @@ window.editData2 = async function (id) {
         description: newdesc,
         price: newprice,
       });
+      formappareance2.classList.toggle("hide");
       console.log("Edit success");
     });
   } catch (error) {

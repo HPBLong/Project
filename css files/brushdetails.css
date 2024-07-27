@@ -1,0 +1,160 @@
+body {
+  font-family: "Playwrite NG Modern", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.footer-icon:hover {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+.x:hover {
+  color: rgb(0, 0, 0);
+  transition: all 0.5s;
+}
+.yt:hover {
+  color: rgb(250, 92, 92);
+  transition: all 0.5s;
+}
+.insta:hover {
+  color: pink;
+  transition: all 0.5s;
+}
+.fb:hover {
+  color: rgb(0, 0, 255);
+  transition: all 0.5s;
+}
+.reddit:hover {
+  color: orange;
+  transition: all 0.5s;
+}
+.footer-icons {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+.footer-icon {
+  font-size: 25px;
+  margin: 0 10px;
+  padding: 0 10px;
+}
+.footer {
+  background-color: rgb(235, 172, 0);
+  color: white;
+  text-align: center;
+  padding: 30px;
+  margin-top: auto;
+}
+.info-item {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+}
+.info-item:hover {
+  text-decoration: underline;
+}
+.navbar-brand {
+  color: white;
+}
+.navbar-brand:hover {
+  color: white;
+}
+.btn {
+  color: white;
+}
+.login-btn {
+  display: inline-block;
+  text-align: left;
+}
+.contain {
+  background-color: rgb(235, 172, 0);
+  margin-top: -0.55%;
+}
+.btn:hover {
+  border: solid 1px white;
+  color: white;
+}
+.carousel-control-next-icon:after {
+  content: ">";
+  font-size: 55px;
+  color: black;
+}
+.carousel-control-prev-icon:after {
+  content: "<";
+  font-size: 55px;
+  color: black;
+}
+.carousel-item {
+  border: solid rgb(235, 172, 0) 1px;
+  border-radius: 5px;
+}
+.liked {
+  margin: 1% 25% 0 25%;
+  padding-top: 10px;
+  border: 3px solid rgb(235, 172, 0);
+  border-radius: 5px;
+}
+.title {
+  color: rgb(235, 172, 0);
+}
+.Title {
+  text-align: center;
+  color: rgb(235, 172, 0);
+  margin-top: 1%;
+}
+.titlecontainer {
+  border: solid rgb(235, 172, 0) 2px;
+  border-radius: 5px;
+  margin: 0 25% 0 25%;
+  padding-top: 5px;
+}
+.morebtn {
+  margin-bottom: 10px;
+  border-radius: 3px;
+  background-color: white;
+  border: solid rgb(235, 172, 0) 2px;
+  color: rgb(235, 172, 0);
+  padding: 5px;
+  transition: all 0.3s;
+  border-radius: 25px;
+}
+.morebtn:hover {
+  background-color: rgb(235, 172, 0);
+  color: white;
+}
+.btn {
+  background-color: rgb(235, 172, 0);
+  border: 2px solid rgb(235, 172, 0);
+  border-radius: 25px;
+}
+.btn:hover {
+  background-color: white;
+  border: 2px solid rgb(235, 172, 0);
+  color: rgb(235, 172, 0);
+}
+.nav-link {
+  color: white;
+  font-size: 14px;
+  margin-left: 10px;
+  border-radius: 25px;
+}
+.nav-link:hover {
+  background-color: white;
+  color: rgb(235, 172, 0);
+}
+.item-card {
+  margin: 1%;
+}
+.card-body {
+  text-align: center;
+}
+.Productcontainer {
+  width: 50%;
+  margin: 5%;
+  display: inline-block;
+}
+.product-info {
+  display: inline-block;
+}
