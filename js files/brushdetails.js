@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
-import { firebaseConfig } from "./firebase.js";
+import { firebaseConfig, onAuthStateChanged, auth } from "./firebase.js";
 import {
   getFirestore,
   collection,
@@ -51,7 +51,7 @@ async function getpaintDetails(id) {
       <h2 id="title" class="title">${docSnap.data().title}</h2> 
       <h3 id="desc" class="title">${docSnap.data().description}</h3>
       <h4 id="price" class="title">${docSnap.data().price}</h4> 
-      <button class="morebtn">Purchase</button>`;
+      <a class="morebtn" href="./purchase.html">Purchase</a>`;
     } else {
       console.log("No such document!");
       document.getElementById("output").innerHTML = "Product not found!";
@@ -64,3 +64,12 @@ async function getpaintDetails(id) {
 }
 
 getpaintDetails(postId);
+const btnLogin = document.getElementById("login");
+const btnProfile = document.getElementById("profilebtn");
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    btnLogin.classList.add("hide");
+  } else {
+    btnProfile.classList.add("hide");
+  }
+});

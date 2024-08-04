@@ -119,6 +119,7 @@ body {
   padding: 5px;
   transition: all 0.3s;
   border-radius: 25px;
+  text-decoration: none;
 }
 .morebtn:hover {
   background-color: rgb(235, 172, 0);
@@ -157,4 +158,7 @@ body {
 }
 .product-info {
   display: inline-block;
+}
+.hide {
+  display: none;
 }

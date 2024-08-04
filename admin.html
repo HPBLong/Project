@@ -32,31 +32,71 @@
     <link rel="stylesheet" href="./css files/admin.css" />
   </head>
   <body>
-    <div class="topbar">
-      <i class="fa-solid fa-palette"> Admin Panel</i>
-      <a class="viewhome" href="./home.html">View Home Page</a>
+    <div class="topbar fixed-top">
+      <i class="fa-solid fa-palette"
+        ><p class="navbar-name d-inline-block">Admin Panel</p></i
+      >
+      <a class="viewhome" href="./home.html">
+        <i class="fa-solid fa-eye"></i>View Home Page</a
+      >
     </div>
-    <div>
-      <h1>Add Brush products</h1>
-      <form action="" id="brushproductForm">
-        <input type="text" id="title" placeholder="Product name" />
-        <input
-          class="desc"
-          type="text"
-          id="description"
-          placeholder="Description"
-        />
-        <input
-          class="desc"
-          type="text"
-          id="brushpricetag"
-          placeholder="Price"
-        />
-        <button type="submit">submit</button>
-      </form>
+    <div class="contain">
+      <h1 class="add">Add Brush products</h1>
+    </div>
+    <div class="row">
+      <div class="form col-md-6">
+        <form action="" id="brushproductForm">
+          <input
+            type="text"
+            id="title"
+            placeholder="Product name"
+            class="desc"
+          />
+          <input
+            class="desc"
+            type="text"
+            id="description"
+            placeholder="Description"
+          />
+          <input
+            class="desc"
+            type="text"
+            id="brushpricetag"
+            placeholder="Price"
+          />
+          <button type="submit" class="button">submit</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <div id="brushform" class="hide">
+          <div class="editing-form form editform">
+            <form action="" id="editbrushform">
+              <input
+                class="desc"
+                type="text"
+                id="newtitle"
+                placeholder="Input new Product name"
+              />
+              <input
+                class="desc"
+                type="text"
+                id="newdesc"
+                placeholder="Input new Description"
+              />
+              <input
+                class="desc"
+                type="text"
+                id="newprice"
+                placeholder="Input new Price"
+              />
+              <button type="submit" class="button">submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="Title">
-      <h2>Brushes</h2>
+      <h2 class="add">Brushes</h2>
       <div id="brushoutput" class="row item-card">
         <!-- <div class="card col-3 mx-auto">
           <img
@@ -74,52 +114,64 @@
           </div>
         </div> -->
       </div>
-      <div id="brushform" class="hide">
-        <div class="editing-form">
-          <form action="" id="editbrushform">
+    </div>
+    <div>
+      <h1 class="add">Add Paint products</h1>
+      <div class="row">
+        <div class="form col col-md-6">
+          <form action="" id="paintproductForm">
             <input
               type="text"
-              id="newtitle"
-              placeholder="Input new Product name"
+              id="painttitle"
+              placeholder="Product name"
+              class="desc"
             />
             <input
               class="desc"
               type="text"
-              id="newdesc"
-              placeholder="Input new Description"
+              id="paintdesc"
+              placeholder="Description"
             />
             <input
               class="desc"
               type="text"
-              id="newprice"
-              placeholder="Input new Price"
+              id="paintpricetag"
+              placeholder="Price"
             />
-            <button type="submit">submit</button>
+            <button type="submit" class="button">submit</button>
           </form>
+        </div>
+        <div class="col-md-6">
+          <div id="paintform" class="hide">
+            <div class="editing-form form editform">
+              <form action="" id="editpaintform">
+                <input
+                  class="desc"
+                  type="text"
+                  id="newtitle"
+                  placeholder="Input new Product name"
+                />
+                <input
+                  class="desc"
+                  type="text"
+                  id="newdesc"
+                  placeholder="Input new Description"
+                />
+                <input
+                  class="desc"
+                  type="text"
+                  id="newprice"
+                  placeholder="Input new Price"
+                />
+                <button type="submit" class="button">submit</button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div>
-      <h1>Add Paint products</h1>
-      <form action="" id="paintproductForm">
-        <input type="text" id="painttitle" placeholder="Product name" />
-        <input
-          class="desc"
-          type="text"
-          id="paintdesc"
-          placeholder="Description"
-        />
-        <input
-          class="desc"
-          type="text"
-          id="paintpricetag"
-          placeholder="Price"
-        />
-        <button type="submit">submit</button>
-      </form>
-    </div>
     <div class="Title">
-      <h2>Paints</h2>
+      <h2 class="add">Paints</h2>
       <div id="paintoutput" class="row item-card">
         <!-- <div class="card col-3 mx-auto">
           <img
@@ -136,30 +188,6 @@
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div> -->
-      </div>
-      <div id="paintform" class="hide">
-        <div class="editing-form">
-          <form action="" id="editpaintform">
-            <input
-              type="text"
-              id="newtitle"
-              placeholder="Input new Product name"
-            />
-            <input
-              class="desc"
-              type="text"
-              id="newdesc"
-              placeholder="Input new Description"
-            />
-            <input
-              class="desc"
-              type="text"
-              id="newprice"
-              placeholder="Input new Price"
-            />
-            <button type="submit">submit</button>
-          </form>
-        </div>
       </div>
     </div>
     <script src="./js files/admin.js" type="module"></script>

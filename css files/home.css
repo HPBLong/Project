@@ -154,3 +154,6 @@ body {
   color: white;
   text-decoration: none;
 }
+.hide {
+  display: none;
+}

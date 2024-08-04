@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
-import { firebaseConfig } from "./firebase.js";
+import { firebaseConfig, auth, signOut } from "./firebase.js";
 import {
   getFirestore,
   collection,
@@ -36,4 +36,17 @@ onSnapshot(postQuery, (snapshot) => {
              </div>
            </div>`;
   });
+});
+
+const btnLogout = document.getElementById("logout");
+
+btnLogout.addEventListener("click", () => {
+  signOut(auth)
+    .then(() => {
+      alert("sign out successfully");
+      window.location.href = "./login.html";
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 });

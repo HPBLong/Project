@@ -143,3 +143,36 @@ p {
 .profile-item {
   display: inline-block;
 }
+.hide {
+  display: none;
+}
+/* #logout {
+  border: 2px solid white;
+  background-color: white;
+  border-radius: 25px;
+  color: rgb(235, 172, 0);
+  margin-left: 77%;
+  padding: 5px;
+}
+#logout:hover {
+  background-color: rgb(235, 172, 0);
+  color: white;
+} */
+.btn-group {
+  border-radius: 25px;
+  margin-left: 69%;
+}
+.edit,
+.logout {
+  border: 2px solid rgb(235, 172, 0);
+  background-color: rgb(235, 172, 0);
+  color: white;
+}
+.edit:hover {
+  background-color: white;
+  color: rgb(235, 172, 0);
+}
+.logout:hover {
+  background-color: white;
+  color: rgb(235, 172, 0);
+}

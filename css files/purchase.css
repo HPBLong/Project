@@ -1,9 +1,3 @@
-body {
-  font-family: "Playwrite NG Modern", cursive;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
 .footer-icon:hover {
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
@@ -55,60 +49,25 @@ body {
 .info-item:hover {
   text-decoration: underline;
 }
+.contain {
+  background-color: rgb(235, 172, 0);
+  margin-top: -0.55%;
+}
+.nav-link {
+  color: white;
+  font-size: 14px;
+  margin-left: 10px;
+  border-radius: 25px;
+}
+.nav-link:hover {
+  background-color: white;
+  color: rgb(235, 172, 0);
+}
 .navbar-brand {
   color: white;
 }
 .navbar-brand:hover {
   color: white;
-}
-.btn {
-  color: white;
-}
-.login-btn {
-  display: inline-block;
-  text-align: left;
-}
-.contain {
-  background-color: rgb(235, 172, 0);
-  margin-top: -0.55%;
-}
-.btn:hover {
-  border: solid 1px white;
-  color: white;
-}
-.carousel-control-next-icon:after {
-  content: ">";
-  font-size: 55px;
-  color: black;
-}
-.carousel-control-prev-icon:after {
-  content: "<";
-  font-size: 55px;
-  color: black;
-}
-.carousel-item {
-  border: solid rgb(235, 172, 0) 1px;
-  border-radius: 5px;
-}
-.liked {
-  margin: 1% 25% 0 25%;
-  padding-top: 10px;
-  border: 3px solid rgb(235, 172, 0);
-  border-radius: 5px;
-}
-.title {
-  color: rgb(235, 172, 0);
-}
-.Title {
-  text-align: center;
-  color: rgb(235, 172, 0);
-  margin-top: 1%;
-}
-.titlecontainer {
-  border: solid rgb(235, 172, 0) 2px;
-  border-radius: 5px;
-  margin: 0 25% 0 25%;
-  padding-top: 5px;
 }
 .morebtn {
   margin-bottom: 10px;
@@ -134,30 +93,74 @@ body {
   border: 2px solid rgb(235, 172, 0);
   color: rgb(235, 172, 0);
 }
-.nav-link {
-  color: white;
-  font-size: 14px;
-  margin-left: 10px;
-  border-radius: 25px;
-}
-.nav-link:hover {
-  background-color: white;
+.Title {
+  text-align: center;
   color: rgb(235, 172, 0);
+  margin-top: 1%;
+}
+.titlecontainer {
+  border: solid rgb(235, 172, 0) 2px;
+  border-radius: 5px;
+  margin: 0 25% 0 25%;
+  padding-top: 5px;
 }
 .item-card {
-  margin: 1%;
+  margin: 1% 0 1% 0;
 }
-.card-body {
-  text-align: center;
+body {
+  font-family: "Playwrite NG Modern", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
-.Productcontainer {
-  width: 50%;
-  margin: 5%;
-  display: inline-block;
-}
-.product-info {
-  display: inline-block;
+.total-section {
+  background-color: rgb(235, 172, 0);
+  border-radius: 5px;
+  padding: 3%;
 }
 .hide {
   display: none;
+}
+.total-title {
+  border: 2px solid rgb(235, 172, 0);
+  text-align: center;
+  color: rgb(235, 172, 0);
+  padding: 3%;
+  border-radius: 5px;
+}
+.name {
+  margin-left: 0;
+}
+.runningoutofnames {
+  background-color: rgb(235, 172, 0);
+  padding: 1% 0 1% 0;
+  border-radius: 5px;
+  margin-top: 1%;
+}
+.tag {
+  color: white;
+}
+#minusBtn,
+#plusBtn {
+  border: 2px solid white;
+}
+.total-price {
+  margin-top: 3.7%;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 2%;
+}
+.footer {
+  margin-top: 1%;
+}
+.buybtn {
+  border: 2px solid white;
+  background-color: white;
+  border-radius: 25px;
+  color: rgb(235, 172, 0);
+  margin-left: 39%;
+}
+.buybtn:hover {
+  background-color: rgb(235, 172, 0);
+  color: white;
 }

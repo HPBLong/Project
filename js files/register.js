@@ -18,6 +18,7 @@ formRegister.addEventListener("submit", (event) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        alert("User registered");
         window.location.href = "../login.html";
       })
       .catch((error) => {

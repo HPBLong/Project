@@ -65,7 +65,7 @@ onSnapshot(postQuery, (snapshot) => {
     const postId = doc.id;
 
     brushoutput.innerHTML += `
-          <div class="card col-3 mx-1" style="width: 10%">
+          <div class="card col-3 mx-auto" style="width: 15%">
            <img
              src="./images/painting-brush-4inch_hubae71684f74698452562c146daae5a96_56954_750x750_resize_q85_box.jpg"
              class="card-img-top"
@@ -99,7 +99,7 @@ onSnapshot(postQuery2, (snapshot) => {
     const postId = doc.id;
 
     paintoutput.innerHTML += `
-          <div class="card col-3 mx-1" style="width: 10%">
+          <div class="card col-3 mx-auto" style="width: 15%">
            <img
              src="./images/paint buckets.avif"
              class="card-img-top"
