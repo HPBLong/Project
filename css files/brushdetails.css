@@ -161,3 +161,6 @@ body {
 .hide {
   display: none;
 }
+.holder {
+  margin-bottom: 5%;
+}

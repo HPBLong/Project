@@ -35,8 +35,10 @@ onSnapshot(postQuery, (snapshot) => {
              <p class="card-text">
              ${doc.data().price}
              </p>
-                <a href="./brushdetails.html?id=${postId}" class="btn btn-primary holder">More Details</a>
            </div>
+           <div class="holder">
+              <a href="./brushdetails.html?id=${postId}" class="btn btn-primary holder">More Details</a>
+             </div>
          </div>`;
   });
 });
@@ -60,8 +62,10 @@ onSnapshot(postQuery2, (snapshot) => {
              <p class="card-text">
              ${doc.data().price}
              </p> 
-                <a href="./details.html?id=${postId}" class="btn btn-primary holder">More Details</a>
            </div>
+           <div class="holder">
+              <a href="./details.html?id=${postId}" class="btn btn-primary holder">More Details</a>
+             </div>
          </div>`;
   });
 });

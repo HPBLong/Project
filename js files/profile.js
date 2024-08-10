@@ -32,7 +32,9 @@ onSnapshot(postQuery, (snapshot) => {
                <p class="card-text">
                ${doc.data().price}
                </p>
-               <a href="./details.html?id=${postId}" class="btn btn-primary">More Details</a>
+             </div>
+             <div class="holder">
+              <a href="./brushdetails.html?id=${postId}" class="btn btn-primary holder">More Details</a>
              </div>
            </div>`;
   });

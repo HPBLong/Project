@@ -79,6 +79,8 @@ onSnapshot(postQuery, (snapshot) => {
              <p class="card-text">
              ${doc.data().price}
              </p>
+           </div>
+           <div class="holder">
              <div class="btn-group">
              <button onclick="deleteData1('${
                doc.id
@@ -87,7 +89,6 @@ onSnapshot(postQuery, (snapshot) => {
                doc.id
              }')" type="button" class="btn btn-primary">Edit</button>
              </div>
-           </div>
          </div>`;
   });
 });
@@ -113,15 +114,17 @@ onSnapshot(postQuery2, (snapshot) => {
              <p class="card-text">
              ${doc.data().price}
              </p>
-             <div class="btn-group">
-             <button onclick="deleteData2('${
-               doc.id
-             }')" type="button" class="btn btn-primary">Delete</button>
-             <button onclick="editData2('${
-               doc.id
-             }')" type="button" class="btn btn-primary">Edit</button>
              </div>
-           </div>
+             <div class="holder">
+              <div class="btn-group">
+              <button onclick="deleteData2('${
+                doc.id
+              }')" type="button" class="btn btn-primary">Delete</button>
+              <button onclick="editData2('${
+                doc.id
+              }')" type="button" class="btn btn-primary">Edit</button>
+              </div>
+            </div>
          </div>`;
   });
 });
@@ -184,7 +187,7 @@ window.editData2 = async function (id) {
         description: newdesc,
         price: newprice,
       });
-      formappareance2.classList.toggle("hide");
+      editpaintform.classList.toggle("hide");
       console.log("Edit success");
     });
   } catch (error) {

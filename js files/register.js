@@ -14,11 +14,13 @@ formRegister.addEventListener("submit", (event) => {
 
   if (email.length == 0 || password.length == 0) {
     alert("Email or Password mustn't be empty!");
+  } else if (password.length < 8) {
+    alert("Password must be atleast 8 characters long!");
   } else {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        alert("User registered");
+        alert("User registered!");
         window.location.href = "../login.html";
       })
       .catch((error) => {
